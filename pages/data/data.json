@@ -1,0 +1,8 @@
+[
+  {"name": "First", "number": 1, "id": 1},
+  {"name": "sec", "number": 0, "id": 2},
+  {"name": "three", "number": 15, "id": 3},
+  {"name": "other", "number": 451, "id": 4},
+  {"name": "another", "number": 123, "id": 5},
+  {"name": "more", "number": 15, "id": 6}
+]

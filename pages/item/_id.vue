@@ -1,5 +1,5 @@
 <template>
-  <div class="item" :class="{animated : animated}" :key="id">
+  <div class="item" :key="id">
     <h1>{{name}}!</h1>
     <p><span>{{id}}:</span> {{number}}</p>
     <p v-if="bool"> blurred </p>
@@ -17,16 +17,13 @@
       const id = this.$route.params.id;
       const item = MYDATA.filter(item => item.id == id)[0];
       item.bool = Math.random() < 0.5;
-      item.animated = false;
       return item;
     },
     created() {
       console.log(`created`);
-      this.animated = false;
     },
     mounted() {
       console.log(`mounted`);
-      this.animated = true;
     },
     head () {
       return {
@@ -44,14 +41,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  &.animated {
-  transition: color .5s;
-    color: red;
-  }
 }
  h1 {
-   color: violet;
+   color: purple;
    text-align: center;
    text-transform: uppercase;
  }

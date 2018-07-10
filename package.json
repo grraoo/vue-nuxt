@@ -4,6 +4,11 @@
   "description": "Nuxt.js project",
   "author": "grraoo <evil@grraoo.ru>",
   "private": true,
+  "config": {
+    "nuxt": {
+      "port": "3333"
+    }
+   },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

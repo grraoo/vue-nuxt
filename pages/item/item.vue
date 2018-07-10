@@ -18,7 +18,7 @@
       return {
         name: this.itemdata.name,
         number: this.itemdata.number,
-        bool: !Math.ceil(Math.random() - 0.5),
+        bool: Math.random() < 0.5,
         id: this.itemdata.id
       }
     }

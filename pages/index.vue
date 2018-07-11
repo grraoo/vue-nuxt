@@ -3,18 +3,21 @@
     <div v-for="item in items" :key="item.id">
       <item :itemdata="item" />
     </div>
+    <!-- <button @click="$store.commit('increment')">add</button>
+{{$store.state.counter}} -->
   </section>
 </template>
 
 <script>
 import Item from './item/item';
-import MYDATA from './data/data.json'
+import idVue from './item/_id.vue';
+import devUtils from '../utils/devUtils';
 
 export default {
   data() {
     return {
       name: `Ssr-Vue`,
-      items: MYDATA
+      items: this.$store.state.items,
     }
   },
   methods: {
@@ -22,8 +25,12 @@ export default {
       this.name = this.name.split(``).reverse().join(``);
     }
   },
+  mounted() {
+    devUtils.console(process.env.NODE_ENV);
+  },
   components: {
-    Item
+    Item,
+    idVue
   }
 }
 </script>

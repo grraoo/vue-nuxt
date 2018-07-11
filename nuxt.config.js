@@ -1,5 +1,5 @@
 const MYDATA = require('./pages/data/data.json');
-console.log(MYDATA);
+
 module.exports = {
   generate: {
     routes: function () {
@@ -34,7 +34,8 @@ module.exports = {
    ** Customize the progress bar color
    */
   loading: {
-    color: 'red'
+    color: 'violet',
+    height: 10
   },
   /*
    ** Build configuration
@@ -54,7 +55,8 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      } else {
       }
     }
-  }
+  },
 }

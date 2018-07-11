@@ -1,28 +1,29 @@
 <template>
-<nuxt-link :to="'/item/' + id">
-  <div class="item" :class="{blur : bool}">
-    <h1>{{name}}</h1>
+  <div class="item">
+    <nuxt-link :to="(`/item/${id}`)">
+      <h1>{{name}}</h1>
+    </nuxt-link>
     <p>: {{number}}</p>
+    <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
+
   </div>
-</nuxt-link>
 </template>
 
 <script>
-  export default {
-    props: {
-      itemdata: {
-        type: Object
-      }
-    },
-    data() {
-      return {
-        name: this.itemdata.name,
-        number: this.itemdata.number,
-        bool: Math.random() < 0.5,
-        id: this.itemdata.id
-      }
+export default {
+  props: {
+    itemdata: {
+      type: Object
     }
+  },
+  data() {
+    return {
+      name: this.itemdata.name,
+      number: this.itemdata.number,
+      id: this.itemdata.id
+    };
   }
+};
 </script>
 
 <style scoped lang="scss">
@@ -35,8 +36,8 @@
   }
 }
 .blur {
-  filter:blur(5px);
-  transition-duration: .2s;
+  filter: blur(5px);
+  transition-duration: 0.2s;
   &:hover {
     filter: none;
   }
